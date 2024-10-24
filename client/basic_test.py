@@ -14,6 +14,6 @@ if __name__ == "__main__":
     while True:
         try:
             data = receive_data()
-            print("Received photoresistor value:", data)
+            print("Received photoresistor | touch values:", data)
         except Exception as e:
             print("Failed to receive data:", e)
