@@ -60,26 +60,7 @@ The visualization reflects **real-time environmental changes**, including:
 
 ### Python Setup
 
-1. **Ensure Required Libraries are Installed on the Raspberry Pi**:
-   - Update your Raspberry Pi's package list and upgrade existing packages:
-     ```bash
-     sudo apt-get update
-     sudo apt-get upgrade
-     ```
-   - Verify that Python 3 is installed:
-     ```bash
-     python3 --version
-     ```
-     - If Python 3 is not installed, install it:
-       ```bash
-       sudo apt-get install python3
-       ```
-   - Install `pip` for Python 3 if not already installed:
-     ```bash
-     sudo apt-get install python3-pip
-     ```
-
-2. **Install Pygame and Dependencies**:
+1. **Install Pygame and Dependencies**:
    - Pygame may require additional packages on the Raspberry Pi due to its graphical nature.
    - Install the necessary SDL dependencies:
      ```bash
@@ -87,28 +68,12 @@ The visualization reflects **real-time environmental changes**, including:
                           libsmpeg-dev libportmidi-dev libavformat-dev libswscale-dev \
                           libfreetype6-dev libjpeg-dev
      ```
-   - Install Pygame using `pip3`:
+   - Install Pygame using `pip`:
      ```bash
-     pip3 install pygame
+     pip install pygame
      ```
-     - Alternatively, you can install Pygame through `apt-get`:
-       ```bash
-       sudo apt-get install python3-pygame
-       ```
 
-3. **Clone the Repository or Download the Files**:
-   - Navigate to your desired directory and clone the repository:
-     ```bash
-     git clone https://github.com/your-repository/seasonal-tree-visualization.git
-     cd seasonal-tree-visualization
-     ```
-     - If you don't have `git` installed:
-       ```bash
-       sudo apt-get install git
-       ```
-     - Or download the ZIP file from GitHub and extract it.
-
-4. **Set the ESP32 IP Address**:
+3. **Set the ESP32 IP Address**:
    - Open the Python script (`wireless_fractal_plant.py`) in a text editor:
      ```bash
      nano wireless_fractal_plant.py
@@ -118,22 +83,22 @@ The visualization reflects **real-time environmental changes**, including:
      esp32_ip = "your_esp32_ip_address"
      ```
 
-5. **Run the Pygame Visualization**:
+4. **Run the Pygame Visualization**:
    - Execute the Python script using Python 3:
      ```bash
      python3 wireless_fractal_plant.py
      ```
    - The visualization should open in full-screen mode on your Raspberry Pi.
 
-6. **Interacting with the Visualization**:
+5. **Interacting with the Visualization**:
    - **Light Sensor**: Adjust the amount of light on the photoresistor to change the light level in the visualization.
    - **Watering Sensor**: Pour water on the touch sensor to simulate watering the tree.
 
-7. **Exit the Visualization**:
+6. **Exit the Visualization**:
    - Press the `ESC` key to exit the full-screen mode and close the program.
    - If the window does not close, you can press `Alt+F4` or switch to the terminal and press `Ctrl+C` to terminate the script.
 
-8. **Auto-Start the Visualization on Boot**:
+7. **Auto-Start the Visualization on Boot**:
    - If you want the visualization to start automatically when the Raspberry Pi boots up, you can add a command to the `wayfire.ini` file or create a systemd service.
    - Edit `~/.config/wayfire.ini`:
      ```bash
@@ -141,6 +106,3 @@ The visualization reflects **real-time environmental changes**, including:
      autostart_wf_shell = false
      name = python path/to/project
      ```
-
-**Note**: Ensure that your Raspberry Pi and ESP32 are connected to the same Wi-Fi network for the socket communication to work properly.
-
