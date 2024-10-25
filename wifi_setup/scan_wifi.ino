@@ -1,3 +1,5 @@
+// Copied from the linked tutorial below
+
 /*
 *  ESP32 WiFi Scanner Example. Examples > WiFi > WiFiScan
 *  Full Tutorial @ https://deepbluembedded.com/esp32-wifi-library-examples-tutorial-arduino/

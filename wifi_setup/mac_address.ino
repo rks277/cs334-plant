@@ -1,3 +1,5 @@
+// Copied from 334 course notes
+
 /* 
 It sometimes amazes me how much broken code is on the internet. I wish I hadn't written so much of it.
 -sage
