@@ -132,14 +132,22 @@ def main():
         light_level = max(0, light_level - 0.05)  # Light fades gradually
         water_level = max(0, water_level - 0.05)  # Water fades gradually
 
-        if light < 400:
+        # print(light)
+
+        if light < 230:
+            light_level = min(100, light_level + 0.1)
+        elif light < 600:
             light_level = min(100, light_level + 0.5)
-        elif light < 200:
-            light_level = min(100, light_level + 2)
-        elif light > 700:
+        elif light > 800:
             light_level = max(0, min(100, light_level - 2))
 
         water_level = min(100, water_level + 0.1 * (46 - water))
+        
+        print(water)
+        # For actual watering
+        if water_level < 50:
+            if water < 45:
+                water_level = 100
 
         # Summer light damage check
         if season == 1:  # Summer
@@ -161,7 +169,7 @@ def main():
             leaf_opacity = min(leaf_opacity + 1, 200)  # Reset for spring/summer
 
         # Plant wilts if not enough water
-        if water_level < 80:
+        if water_level < 80 or light_level < 50:
             leaf_opacity = max(leaf_opacity - 10, 0)
             angle_step += 0.3
         else:
