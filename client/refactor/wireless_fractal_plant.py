@@ -99,8 +99,10 @@ def draw_lsystem(screen, s, start_pos, unit, angle_step, elapsed_time, leaf_opac
 # Main function to initialize and run the Pygame window
 def main():
     pygame.init()
-    dim = (1000, 780)
-    screen = pygame.display.set_mode(dim)
+    display_info = pygame.display.Info()
+    dim = (display_info.current_w, display_info.current_h)
+    # screen = pygame.display.set_mode(dim)
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
     s = generate_string(7)
     leaf_opacity = 200  # Set initial opacity for the leaves
