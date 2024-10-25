@@ -109,20 +109,19 @@ The visualization reflects **real-time environmental changes**, including:
      - Or download the ZIP file from GitHub and extract it.
 
 4. **Set the ESP32 IP Address**:
-   - Open the Python script (`main.py`) in a text editor:
+   - Open the Python script (`wireless_fractal_plant.py`) in a text editor:
      ```bash
-     nano main.py
+     nano wireless_fractal_plant.py
      ```
    - Locate the line that sets the `esp32_ip` variable and replace `"your_esp32_ip_address"` with the actual IP address of your ESP32:
      ```python
      esp32_ip = "your_esp32_ip_address"
      ```
-     - Save and exit the editor (`Ctrl+X`, then `Y`, then `Enter` in `nano`).
 
 5. **Run the Pygame Visualization**:
    - Execute the Python script using Python 3:
      ```bash
-     python3 main.py
+     python3 wireless_fractal_plant.py
      ```
    - The visualization should open in full-screen mode on your Raspberry Pi.
 
@@ -138,9 +137,9 @@ The visualization reflects **real-time environmental changes**, including:
    - If you want the visualization to start automatically when the Raspberry Pi boots up, you can add a command to the `wayfire.ini` file or create a systemd service.
    - Edit `~/.config/wayfire.ini`:
      ```bash
-    [autostart]
-    autostart_wf_shell = false
-    chromium = python path/to/project
+     [autostart]
+     autostart_wf_shell = false
+     name = python path/to/project
      ```
 
 **Note**: Ensure that your Raspberry Pi and ESP32 are connected to the same Wi-Fi network for the socket communication to work properly.
